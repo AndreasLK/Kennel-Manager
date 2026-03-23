@@ -3,9 +3,11 @@ package com.example.kennelmanagercompose.ui
 import androidx.compose.runtime.*
 import androidx.compose.ui.geometry.Offset
 import androidx.lifecycle.ViewModel
-import com.example.kennelmanagercompose.ui.state.WindowContent
 import com.example.kennelmanagercompose.core.AppConfig
+import com.example.kennelmanagercompose.domain.enums.MapLens
+import com.example.kennelmanagercompose.domain.models.dog.Dog
 import com.example.kennelmanagercompose.domain.models.housing.Cage
+import com.example.kennelmanagercompose.ui.state.WindowContent
 import com.example.kennelmanagercompose.ui.state.WindowState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -16,45 +18,35 @@ class WorkspaceViewModel : ViewModel() {
     private val _windows = MutableStateFlow<List<WindowState>>(emptyList())
     val windows = _windows.asStateFlow()
 
+    private val _selectedLens = MutableStateFlow(MapLens.READY_TO_RUN)
+    val selectedLens = _selectedLens.asStateFlow()
+
     var panOffset by mutableStateOf(Offset.Zero)
     var zoom by mutableStateOf(1f)
     private var currentMaxZ = 0f
 
     init {
-        _windows.value = listOf(
-            WindowState(
-                id = "1",
-                position = Offset(100f, 100f),
-                content = WindowContent.KennelOverview("A1")
-            ),
-            WindowState(
-                id = "2",
-                position = Offset(500f, 200f),
-                content = WindowContent.KennelOverview("B4"),
-                scaleX = 2f
-            )
-        )
+        // Initial mock data can be loaded here or via loadKennelMap
     }
 
+    fun setLens(lens: MapLens) {
+        _selectedLens.value = lens
+    }
 
-    fun loadKennelMap(cages: List<Cage>){
+    fun loadKennelMap(cages: List<Cage>, allDogs: List<Dog>) {
         _windows.value = cages.map { cage ->
+            val dogsInCage = allDogs.filter { it.id in cage.dogsInside }
             WindowState(
                 id = cage.id,
                 position = Offset(cage.mapX, cage.mapY),
-                content = WindowContent.KennelOverview(cage.rowName),
-
+                content = WindowContent.KennelOverview(cage.rowName, dogsInCage),
                 scaleX = cage.scaleX,
                 scaleY = cage.scaleY
             )
         }
     }
 
-    fun moveWindow(
-        windowId: String,
-        delta: Offset,
-        density: Float
-    ) {
+    fun moveWindow(windowId: String, delta: Offset, density: Float) {
         _windows.value = _windows.value.map { window ->
             if (window.id == windowId) {
                 val worldDeltaX = delta.x / density
@@ -63,7 +55,7 @@ class WorkspaceViewModel : ViewModel() {
                 val finalX = window.position.x + worldDeltaX
                 val finalY = window.position.y + worldDeltaY
 
-                // Snapping
+
                 val finalPos = calculateSmartSnap(
                     targetId = windowId,
                     targetPos = Offset(finalX, finalY),
@@ -91,7 +83,6 @@ class WorkspaceViewModel : ViewModel() {
         var bY = targetPos.y
 
         val target = all.find { it.id == targetId } ?: return targetPos
-        // IMPORTANT: Get dimensions in DP units
         val tw = target.dimensions.width.value
         val th = target.dimensions.height.value
 
@@ -101,18 +92,15 @@ class WorkspaceViewModel : ViewModel() {
             val ow = other.dimensions.width.value
             val oh = other.dimensions.height.value
 
-            // --- HORIZONTAL SNAPPING (X-Axis) ---
-            if (abs(targetPos.x - (ox + ow)) < threshold) bX = ox + ow                      // Left edge to Other's Right
-            else if (abs((targetPos.x + tw) - ox) < threshold) bX = ox - tw                 // Right edge to Other's Left
-            else if (abs(targetPos.x - ox) < threshold) bX = ox                             // Align Left edges
-            else if (abs((targetPos.x + tw) - (ox + ow)) < threshold) bX = (ox + ow) - tw   //Align Right Edges
+            if (abs(targetPos.x - (ox + ow)) < threshold) bX = ox + ow
+            else if (abs((targetPos.x + tw) - ox) < threshold) bX = ox - tw
+            else if (abs(targetPos.x - ox) < threshold) bX = ox
+            else if (abs((targetPos.x + tw) - (ox + ow)) < threshold) bX = (ox + ow) - tw
 
-            // --- VERTICAL SNAPPING (Y-Axis) ---
-            // This is likely where the "Sideways only" bug lived
-            if (abs(targetPos.y - (oy + oh)) < threshold) bY = oy + oh                      // Top edge to Other's Bottom
-            else if (abs((targetPos.y + th) - oy) < threshold) bY = oy - th                 // Bottom edge to Other's Top
-            else if (abs(targetPos.y - oy) < threshold) bY = oy                             // Align Top edges
-            else if (abs((targetPos.y + th) - (oy + oh)) < threshold) bY = (oy + oh) - th   // Align Bottom Edges
+            if (abs(targetPos.y - (oy + oh)) < threshold) bY = oy + oh
+            else if (abs((targetPos.y + th) - oy) < threshold) bY = oy - th
+            else if (abs(targetPos.y - oy) < threshold) bY = oy
+            else if (abs((targetPos.y + th) - (oy + oh)) < threshold) bY = (oy + oh) - th
         }
         return Offset(bX, bY)
     }

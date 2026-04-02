@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.domain.models.config
+package com.example.kennelmanagercompose.runtracking.domain.config
 
 import com.example.kennelmanagercompose.core.AppConfig
 

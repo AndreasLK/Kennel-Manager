@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.ui.theme.sub
+package com.example.kennelmanagercompose.heattracking.ui.themes
 
 import androidx.compose.ui.graphics.Color
 

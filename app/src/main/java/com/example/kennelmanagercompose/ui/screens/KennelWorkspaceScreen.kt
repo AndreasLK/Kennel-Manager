@@ -3,9 +3,7 @@ package com.example.kennelmanagercompose.ui.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -18,25 +16,37 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.kennelmanagercompose.domain.interfaces.KennelStateProvider
 import com.example.kennelmanagercompose.ui.WindowContentRouter
 import com.example.kennelmanagercompose.ui.WorkspaceViewModel
-import com.example.kennelmanagercompose.ui.components.LensPickerRow
+import com.example.kennelmanagercompose.maplens.ui.components.MapLensMenu
 
 @Composable
 fun KennelWorkspaceScreen(
     vm: WorkspaceViewModel = viewModel(),
-    provider: KennelStateProvider // Added provider
+    provider: KennelStateProvider
 ) {
     val windows by vm.windows.collectAsState()
     val selectedLens by vm.selectedLens.collectAsState()
 
-    Box(modifier = Modifier.fillMaxSize().clipToBounds().background(Color(0xFF121212))) {
-        LensPickerRow(
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .clipToBounds()
+            .background(Color(0xFF121212))
+            .systemBarsPadding()) {
+
+        // Combine Picker and Legend Menu
+        MapLensMenu(
             currentLens = selectedLens,
             onLensSelected = { vm.setLens(it) },
-            modifier = Modifier.align(Alignment.TopCenter).zIndex(100f).padding(top = 16.dp)
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(16.dp)
+                .zIndex(100f)
         )
 
+        // The World Layer
         Box(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
                 .pointerInput(Unit) {
                     detectTransformGestures { _, pan, zoomChange, _ ->
                         vm.panOffset += pan
@@ -44,12 +54,18 @@ fun KennelWorkspaceScreen(
                     }
                 }
                 .graphicsLayer {
-                    translationX = vm.panOffset.x; translationY = vm.panOffset.y
-                    scaleX = vm.zoom; scaleY = vm.zoom
+                    translationX = vm.panOffset.x
+                    translationY = vm.panOffset.y
+                    scaleX = vm.zoom
+                    scaleY = vm.zoom
                 }
         ) {
             windows.forEach { window ->
-                WindowContentRouter(window = window, vm = vm, provider = provider)
+                WindowContentRouter(
+                    window = window,
+                    vm = vm,
+                    provider = provider
+                )
             }
         }
     }

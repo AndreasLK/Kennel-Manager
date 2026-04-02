@@ -1,7 +1,7 @@
 package com.example.kennelmanagercompose.domain.interfaces
 
 import com.example.kennelmanagercompose.domain.enums.BodyScore
-import com.example.kennelmanagercompose.domain.enums.Heat
+import com.example.kennelmanagercompose.heattracking.domain.models.Heat
 import com.example.kennelmanagercompose.domain.enums.MissedMeals
 import com.example.kennelmanagercompose.pooptracking.domain.models.PoopScore
 import com.example.kennelmanagercompose.domain.enums.RunStatus

@@ -1,9 +1,9 @@
-package com.example.kennelmanagercompose.ui.theme.colorMappers
+package com.example.kennelmanagercompose.heattracking.ui.colormappers
 
 import androidx.compose.ui.graphics.Color
-import com.example.kennelmanagercompose.domain.enums.Heat
+import com.example.kennelmanagercompose.heattracking.domain.models.Heat
 import com.example.kennelmanagercompose.ui.theme.KennelTheme
-import com.example.kennelmanagercompose.ui.theme.sub.HeatTheme
+import com.example.kennelmanagercompose.heattracking.ui.themes.HeatTheme
 
 fun Heat.toColor(theme: HeatTheme = KennelTheme.heat) : Color = when(this){
         Heat.NOT_IN_HEAT -> theme.notInHeat

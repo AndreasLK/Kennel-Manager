@@ -1,10 +1,12 @@
-package com.example.kennelmanagercompose.ui.theme.colorMappers
+package com.example.kennelmanagercompose.maplens.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import com.example.kennelmanagercompose.domain.enums.MapLens
 import com.example.kennelmanagercompose.domain.interfaces.KennelStateProvider
 import com.example.kennelmanagercompose.domain.models.dog.Dog
+import com.example.kennelmanagercompose.heattracking.ui.colormappers.toColor
 import com.example.kennelmanagercompose.pooptracking.ui.colormappers.toColor
+import com.example.kennelmanagercompose.ui.theme.colorMappers.toColor
 
 object MapLensColorMapper {
     fun mapColor(

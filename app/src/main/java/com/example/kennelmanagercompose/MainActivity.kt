@@ -9,6 +9,7 @@ import com.example.kennelmanagercompose.domain.enums.*
 import com.example.kennelmanagercompose.domain.interfaces.KennelStateProvider
 import com.example.kennelmanagercompose.domain.models.dog.Dog
 import com.example.kennelmanagercompose.domain.models.housing.Cage
+import com.example.kennelmanagercompose.heattracking.domain.models.Heat
 import com.example.kennelmanagercompose.pooptracking.domain.models.PoopScore
 import com.example.kennelmanagercompose.ui.WorkspaceViewModel
 import com.example.kennelmanagercompose.ui.screens.KennelWorkspaceScreen
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
         val stateProvider = object : KennelStateProvider {
             override fun getMissedMeals(dogId: String) = if(dogId == "dog1") MissedMeals.MISSED_4 else MissedMeals.DID_EAT
             override fun getLatestPoopScore(dogId: String) = if(dogId == "dog1" || dogId == "dog4") PoopScore.FIRM else PoopScore.WATERY
-            override fun getHeatStatus(dogId: String) = if(dogId == "dog1" || dogId == "dog6" || dogId == "dog7") Heat.NOT_IN_HEAT else Heat.STANDING_HEAT
+            override fun getHeatStatus(dogId: String) = if(dogId == "dog1" || dogId == "dog3" || dogId == "dog5") Heat.NOT_IN_HEAT else Heat.STANDING_HEAT
             override fun getMedicalStatus(dogId: String) = Severity.UNKNOWN
             override fun getBodyScore(dogId: String) = if(dogId == "dog1") BodyScore.THICK else BodyScore.IDEAL
             override fun getRunStatus(dogId: String) = RunStatus.CAN_RUN
@@ -42,7 +43,6 @@ class MainActivity : ComponentActivity() {
                     Dog(id = "dog4", name = "Bella", breed = "Husky", leadRating = 2, gender = Gender.FEMALE, isCastrated = false, birthday = Instant.now(), bodyScore = BodyScore.IDEAL, status = DogStatus.ACTIVE, birthLitterId = "L2"),
                     Dog(id = "dog5", name = "Charlie", breed = "Malamute", leadRating = 5, gender = Gender.MALE, isCastrated = true, birthday = Instant.now(), bodyScore = BodyScore.IDEAL, status = DogStatus.ACTIVE, birthLitterId = "L3"),
                     Dog(id = "dog6", name = "Zeus", breed = "Husky", leadRating = 4, gender = Gender.MALE, isCastrated = false, birthday = Instant.now(), bodyScore = BodyScore.THIN, status = DogStatus.ACTIVE, birthLitterId = "L3"),
-                    Dog(id = "dog7", name = "Maya", breed = "Malamute", leadRating = 3, gender = Gender.FEMALE, isCastrated = true, birthday = Instant.now(), bodyScore = BodyScore.IDEAL, status = DogStatus.ACTIVE, birthLitterId = "L4")
                 )
 
                 val testCages = listOf(
@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                     Cage(
                         id = "2", rowName = "Main Run", maxCapacity = 5, mapX = 500f, mapY = 200f,
                         scaleX = 1.5f, scaleY = 1.5f, // Made this window slightly larger
-                        dogsInside = listOf("dog3", "dog4", "dog5", "dog6", "dog7"),
+                        dogsInside = listOf("dog3", "dog4", "dog5", "dog6"),
                         longitude = 0.0, latitude = 0.0, description = ""
                     )
                 )

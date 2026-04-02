@@ -1,6 +1,6 @@
-package com.example.kennelmanagercompose.domain.services.calculators
+package com.example.kennelmanagercompose.heattracking.domain.services
 
-import com.example.kennelmanagercompose.domain.models.events.HeatLog
+import com.example.kennelmanagercompose.heattracking.domain.models.HeatLog
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 

@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.domain.models.events
+package com.example.kennelmanagercompose.heattracking.domain.models
 
 import com.example.kennelmanagercompose.core.Entity
 import java.time.LocalDate

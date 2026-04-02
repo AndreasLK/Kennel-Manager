@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.ui.views
+package com.example.kennelmanagercompose.maplens.ui.views
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box

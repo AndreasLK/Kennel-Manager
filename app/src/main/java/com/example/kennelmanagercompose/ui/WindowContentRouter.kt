@@ -12,8 +12,8 @@ import com.example.kennelmanagercompose.domain.interfaces.KennelStateProvider
 import com.example.kennelmanagercompose.ui.state.WindowContent
 import com.example.kennelmanagercompose.ui.components.KennelWindow
 import com.example.kennelmanagercompose.ui.state.WindowState
-import com.example.kennelmanagercompose.ui.theme.colorMappers.MapLensColorMapper
-import com.example.kennelmanagercompose.ui.views.CagePieChartView
+import com.example.kennelmanagercompose.maplens.ui.theme.MapLensColorMapper
+import com.example.kennelmanagercompose.maplens.ui.views.CagePieChartView
 
 @Composable
 fun WindowContentRouter(

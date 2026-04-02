@@ -1,5 +1,4 @@
-package com.example.kennelmanagercompose.domain.enums
-
+package com.example.kennelmanagercompose.heattracking.domain.models
 
 enum class Heat {
     NOT_IN_HEAT,

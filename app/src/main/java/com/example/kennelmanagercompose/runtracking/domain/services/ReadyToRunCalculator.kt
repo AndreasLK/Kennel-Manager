@@ -1,11 +1,11 @@
-package com.example.kennelmanagercompose.domain.services.calculators
+package com.example.kennelmanagercompose.runtracking.domain.services
 
 import com.example.kennelmanagercompose.domain.enums.SessionStatus
-import com.example.kennelmanagercompose.domain.models.activity.RunScore
 import com.example.kennelmanagercompose.domain.models.activity.Session
-import com.example.kennelmanagercompose.domain.models.config.RunRules
-import com.example.kennelmanagercompose.domain.models.config.WorkRules
 import com.example.kennelmanagercompose.domain.models.dog.Dog
+import com.example.kennelmanagercompose.runtracking.domain.config.RunRules
+import com.example.kennelmanagercompose.runtracking.domain.config.WorkRules
+import com.example.kennelmanagercompose.runtracking.domain.models.RunScore
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.Period

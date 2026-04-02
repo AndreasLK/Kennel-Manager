@@ -4,7 +4,7 @@ import com.example.kennelmanagercompose.core.Entity
 import com.example.kennelmanagercompose.domain.enums.BodyScore
 import com.example.kennelmanagercompose.domain.enums.DogStatus
 import com.example.kennelmanagercompose.domain.enums.Gender
-import com.example.kennelmanagercompose.domain.models.config.DogWorkOverrides
+import com.example.kennelmanagercompose.runtracking.domain.config.DogWorkOverrides
 import java.time.Instant
 import java.util.UUID
 

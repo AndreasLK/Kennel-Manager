@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.ui.routers
+package com.example.kennelmanagercompose.draggablemap.core.presentation.routers
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -9,10 +9,10 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.KennelStateProvider
-import com.example.kennelmanagercompose.draggablemap.core.domain.models.WorkspaceViewModel
-import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.WindowContent
-import com.example.kennelmanagercompose.draggablemap.core.ui.components.KennelWindow
-import com.example.kennelmanagercompose.draggablemap.core.domain.models.WindowState
+import com.example.kennelmanagercompose.draggablemap.core.presentation.viewmodels.WorkspaceViewModel
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowContent
+import com.example.kennelmanagercompose.draggablemap.core.presentation.components.KennelWindow
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowState
 import com.example.kennelmanagercompose.draggablemap.maplens.ui.themes.MapLensColorMapper
 import com.example.kennelmanagercompose.draggablemap.maplens.ui.views.CagePieChartView
 

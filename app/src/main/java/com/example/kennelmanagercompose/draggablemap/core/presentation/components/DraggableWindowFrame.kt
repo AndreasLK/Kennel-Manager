@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.ui.components
+package com.example.kennelmanagercompose.draggablemap.core.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
-import com.example.kennelmanagercompose.draggablemap.core.domain.models.WindowState
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowState
 
 /**
  * The physical "shell" of every window in the Kennel Manager.

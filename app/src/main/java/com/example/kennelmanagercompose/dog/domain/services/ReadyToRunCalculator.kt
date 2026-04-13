@@ -1,7 +1,7 @@
 package com.example.kennelmanagercompose.dog.domain.services
 
-import com.example.kennelmanagercompose.dog.config.RunRules
-import com.example.kennelmanagercompose.dog.config.WorkRules
+import com.example.kennelmanagercompose.dog.domain.config.RunRules
+import com.example.kennelmanagercompose.dog.domain.config.WorkRules
 import com.example.kennelmanagercompose.dog.domain.enums.SessionStatus
 import com.example.kennelmanagercompose.dog.domain.models.Dog
 import com.example.kennelmanagercompose.dog.domain.models.RunScore

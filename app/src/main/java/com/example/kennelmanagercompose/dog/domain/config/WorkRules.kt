@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.dog.config
+package com.example.kennelmanagercompose.dog.domain.config
 
 import com.example.kennelmanagercompose.core.AppConfig
 

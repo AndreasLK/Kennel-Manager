@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.ui.themes
+package com.example.kennelmanagercompose.draggablemap.core.presentation.themes
 
 import com.example.kennelmanagercompose.dog.presentation.themes.BodyScoreTheme
 import com.example.kennelmanagercompose.dog.presentation.themes.HeatTheme

@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.kennelmanagercompose.draggablemap.core.ui.themes.KennelTheme
+import com.example.kennelmanagercompose.draggablemap.core.presentation.themes.KennelTheme
 
 
 @Preview(showBackground = true, backgroundColor = 0xFF121212, widthDp = 800, heightDp =1200)

@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.domain.interfaces
+package com.example.kennelmanagercompose.draggablemap.core.presentation.models
 
 import com.example.kennelmanagercompose.dog.domain.models.Dog
 

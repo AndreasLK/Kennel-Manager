@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.domain.models
+package com.example.kennelmanagercompose.draggablemap.core.presentation.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,10 +6,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
 import androidx.lifecycle.ViewModel
 import com.example.kennelmanagercompose.core.AppConfig
-import com.example.kennelmanagercompose.draggablemap.maplens.domain.enums.MapLens
-import com.example.kennelmanagercompose.dog.domain.models.Dog
 import com.example.kennelmanagercompose.dog.domain.models.Cage
-import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.WindowContent
+import com.example.kennelmanagercompose.dog.domain.models.Dog
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowContent
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowState
+import com.example.kennelmanagercompose.draggablemap.maplens.domain.enums.MapLens
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update

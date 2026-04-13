@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.ui.screens
+package com.example.kennelmanagercompose.draggablemap.core.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTransformGestures
@@ -20,8 +20,8 @@ import androidx.compose.ui.zIndex
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.KennelStateProvider
 import com.example.kennelmanagercompose.draggablemap.maplens.ui.components.MapLensMenu
-import com.example.kennelmanagercompose.draggablemap.core.ui.routers.WindowContentRouter
-import com.example.kennelmanagercompose.draggablemap.core.domain.models.WorkspaceViewModel
+import com.example.kennelmanagercompose.draggablemap.core.presentation.routers.WindowContentRouter
+import com.example.kennelmanagercompose.draggablemap.core.presentation.viewmodels.WorkspaceViewModel
 
 @Composable
 fun KennelWorkspaceScreen(

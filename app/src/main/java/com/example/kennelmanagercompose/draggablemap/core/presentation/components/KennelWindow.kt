@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.draggablemap.core.ui.components
+package com.example.kennelmanagercompose.draggablemap.core.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -12,8 +12,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.WindowContent
-import com.example.kennelmanagercompose.draggablemap.core.domain.models.WindowState
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowContent
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowState
 
 @Composable
 fun KennelWindow(

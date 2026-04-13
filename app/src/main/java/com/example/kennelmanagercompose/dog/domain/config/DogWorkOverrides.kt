@@ -1,4 +1,4 @@
-package com.example.kennelmanagercompose.dog.config
+package com.example.kennelmanagercompose.dog.domain.config
 
 data class DogWorkOverrides(
     val minRunAgeMonths: Int? = null,

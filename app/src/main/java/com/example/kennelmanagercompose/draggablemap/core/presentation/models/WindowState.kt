@@ -1,9 +1,9 @@
-package com.example.kennelmanagercompose.draggablemap.core.domain.models
+package com.example.kennelmanagercompose.draggablemap.core.presentation.models
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.unit.DpSize
 import com.example.kennelmanagercompose.core.AppConfig
-import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.WindowContent
+import com.example.kennelmanagercompose.draggablemap.core.presentation.models.WindowContent
 import java.util.UUID
 
 data class WindowState(

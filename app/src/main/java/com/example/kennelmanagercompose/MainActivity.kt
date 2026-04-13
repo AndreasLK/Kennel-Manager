@@ -14,8 +14,8 @@ import com.example.kennelmanagercompose.dog.domain.models.Cage
 import com.example.kennelmanagercompose.dog.domain.enums.Heat
 import com.example.kennelmanagercompose.dog.domain.enums.Severity
 import com.example.kennelmanagercompose.dog.domain.enums.PoopScore
-import com.example.kennelmanagercompose.draggablemap.core.domain.models.WorkspaceViewModel
-import com.example.kennelmanagercompose.draggablemap.core.ui.screens.KennelWorkspaceScreen
+import com.example.kennelmanagercompose.draggablemap.core.presentation.viewmodels.WorkspaceViewModel
+import com.example.kennelmanagercompose.draggablemap.core.presentation.screens.KennelWorkspaceScreen
 import com.example.kennelmanagercompose.dog.domain.enums.MissedMeals
 import com.example.kennelmanagercompose.dog.domain.enums.RunStatus
 import java.time.Instant

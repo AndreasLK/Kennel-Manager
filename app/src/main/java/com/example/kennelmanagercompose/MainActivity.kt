@@ -5,19 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.kennelmanagercompose.dog.bodyscore.domain.enums.BodyScore
-import com.example.kennelmanagercompose.dog.core.domain.enums.DogStatus
-import com.example.kennelmanagercompose.dog.core.domain.enums.Gender
+import com.example.kennelmanagercompose.dog.domain.enums.BodyScore
+import com.example.kennelmanagercompose.dog.domain.enums.DogStatus
+import com.example.kennelmanagercompose.dog.domain.enums.Gender
 import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.KennelStateProvider
-import com.example.kennelmanagercompose.dog.core.domain.models.Dog
-import com.example.kennelmanagercompose.dog.housing.domain.models.Cage
-import com.example.kennelmanagercompose.dog.heat.domain.models.Heat
-import com.example.kennelmanagercompose.dog.medical.enums.Severity
-import com.example.kennelmanagercompose.dog.poop.domain.models.PoopScore
+import com.example.kennelmanagercompose.dog.domain.models.Dog
+import com.example.kennelmanagercompose.dog.domain.models.Cage
+import com.example.kennelmanagercompose.dog.domain.enums.Heat
+import com.example.kennelmanagercompose.dog.domain.enums.Severity
+import com.example.kennelmanagercompose.dog.domain.enums.PoopScore
 import com.example.kennelmanagercompose.draggablemap.core.domain.models.WorkspaceViewModel
 import com.example.kennelmanagercompose.draggablemap.core.ui.screens.KennelWorkspaceScreen
-import com.example.kennelmanagercompose.dog.missedmeals.domain.enums.MissedMeals
-import com.example.kennelmanagercompose.dog.session.domain.enums.RunStatus
+import com.example.kennelmanagercompose.dog.domain.enums.MissedMeals
+import com.example.kennelmanagercompose.dog.domain.enums.RunStatus
 import java.time.Instant
 
 class MainActivity : ComponentActivity() {

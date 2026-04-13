@@ -7,8 +7,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.lifecycle.ViewModel
 import com.example.kennelmanagercompose.core.AppConfig
 import com.example.kennelmanagercompose.draggablemap.maplens.domain.enums.MapLens
-import com.example.kennelmanagercompose.dog.core.domain.models.Dog
-import com.example.kennelmanagercompose.dog.housing.domain.models.Cage
+import com.example.kennelmanagercompose.dog.domain.models.Dog
+import com.example.kennelmanagercompose.dog.domain.models.Cage
 import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.WindowContent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,15 +1,10 @@
 package com.example.kennelmanagercompose.draggablemap.maplens.ui.themes
 
 import androidx.compose.ui.graphics.Color
-import com.example.kennelmanagercompose.dog.bodyscore.ui.colormappers.toColor
+import com.example.kennelmanagercompose.dog.presentation.colormappers.toColor
 import com.example.kennelmanagercompose.draggablemap.maplens.domain.enums.MapLens
 import com.example.kennelmanagercompose.draggablemap.core.domain.interfaces.KennelStateProvider
-import com.example.kennelmanagercompose.dog.core.domain.models.Dog
-import com.example.kennelmanagercompose.dog.heat.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.medical.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.missedmeals.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.poop.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.session.ui.colorMappers.toColor
+import com.example.kennelmanagercompose.dog.domain.models.Dog
 
 object MapLensColorMapper {
     fun mapColor(

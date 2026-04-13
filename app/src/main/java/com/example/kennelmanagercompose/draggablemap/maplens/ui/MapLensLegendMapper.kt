@@ -2,20 +2,15 @@ package com.example.kennelmanagercompose.ui.theme.colorMappers
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.example.kennelmanagercompose.dog.bodyscore.domain.enums.BodyScore
-import com.example.kennelmanagercompose.dog.bodyscore.ui.colormappers.toColor
+import com.example.kennelmanagercompose.dog.domain.enums.BodyScore
+import com.example.kennelmanagercompose.dog.presentation.colormappers.toColor
 import com.example.kennelmanagercompose.draggablemap.maplens.domain.extensions.toDisplayName
-import com.example.kennelmanagercompose.dog.heat.domain.models.Heat
-import com.example.kennelmanagercompose.dog.poop.domain.models.PoopScore
-import com.example.kennelmanagercompose.dog.poop.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.heat.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.medical.enums.Severity
-import com.example.kennelmanagercompose.dog.medical.ui.colormappers.toColor
+import com.example.kennelmanagercompose.dog.domain.enums.Heat
+import com.example.kennelmanagercompose.dog.domain.enums.PoopScore
+import com.example.kennelmanagercompose.dog.domain.enums.Severity
 import com.example.kennelmanagercompose.draggablemap.maplens.domain.enums.MapLens
-import com.example.kennelmanagercompose.dog.missedmeals.domain.enums.MissedMeals
-import com.example.kennelmanagercompose.dog.missedmeals.ui.colormappers.toColor
-import com.example.kennelmanagercompose.dog.session.domain.enums.RunStatus
-import com.example.kennelmanagercompose.dog.session.ui.colorMappers.toColor
+import com.example.kennelmanagercompose.dog.domain.enums.MissedMeals
+import com.example.kennelmanagercompose.dog.domain.enums.RunStatus
 
 // Note: Import your other .toColor() functions here for BodyScore, Severity, etc.
 

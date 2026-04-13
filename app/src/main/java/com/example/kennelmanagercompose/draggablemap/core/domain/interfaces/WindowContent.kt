@@ -1,6 +1,6 @@
 package com.example.kennelmanagercompose.draggablemap.core.domain.interfaces
 
-import com.example.kennelmanagercompose.dog.core.domain.models.Dog
+import com.example.kennelmanagercompose.dog.domain.models.Dog
 
 sealed interface WindowContent {
     // Updated to include dogs for lens rendering
